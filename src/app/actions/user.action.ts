@@ -10,5 +10,5 @@ export interface SetCurrentUserAction extends Action {
 
 export const setCurrentUser:ActionCreator<SetCurrentUserAction> = (user) => ({
     type: SET_CURRENT_USER, 
-    user: user
+    user
 });

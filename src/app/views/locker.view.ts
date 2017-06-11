@@ -38,6 +38,7 @@ abstract class LockerView {
 
     private handleViewPause():void {
         this.events.publish(LockerView.APP_PAUSE_EVENT);
+        this.store.dispatch(resetAppState());
         this.navigator.setRoot(LoginView);
     }
 

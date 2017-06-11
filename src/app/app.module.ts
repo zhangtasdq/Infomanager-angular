@@ -28,6 +28,7 @@ import LoginView from "./views/login/login.view";
 import InfoListView from "./views/info-list/info-list.view";
 import InfoEditView from "./views/info-edit/info-edit.view";
 import InfoShowView from "./views/info-show/info-show.view";
+import InfoDetailEditView from "./views/info-detail-edit/info-detail-edit.view";
 
 let store:Store<AppState> = createStore<AppState>(rootReducer);
 
@@ -37,7 +38,8 @@ let store:Store<AppState> = createStore<AppState>(rootReducer);
     LoginView,
     InfoListView,
     InfoShowView,
-    InfoEditView
+    InfoEditView,
+    InfoDetailEditView
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ let store:Store<AppState> = createStore<AppState>(rootReducer);
     LoginView,
     InfoListView,
     InfoShowView,
-    InfoEditView
+    InfoEditView,
+    InfoDetailEditView
   ],
   providers: [
     StatusBar,

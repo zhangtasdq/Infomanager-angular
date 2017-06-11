@@ -26,7 +26,7 @@ export interface SetInfosAction extends Action {
 
 export const setCurrentInfos:ActionCreator<SetInfosAction> = (infos) => ({
     type: SET_INFOS, 
-    infos: infos
+    infos
 });
 
 export interface AddInfoAction extends Action {
@@ -44,7 +44,7 @@ export interface UpdateInfoAction extends Action {
 
 export const updateInfo:ActionCreator<AddInfoAction> = (info:Info) => ({
     type: UPDATE_INFO,
-    info: info
+    info
 });
 
 export const deleteInfoBegin:ActionCreator<Action> = () => ({
@@ -65,7 +65,7 @@ export interface DeleteInfoAction extends Action {
 
 export const deleteInfo:ActionCreator<DeleteInfoAction> = (id:number) => ({
     type: DELETE_INFO,
-    id: id
+    id
 });
 
 export const resetDeleteInfoStatus:ActionCreator<Action> = () => ({
