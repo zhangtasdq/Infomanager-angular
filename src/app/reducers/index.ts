@@ -7,6 +7,7 @@ import { LoginState, LoginReducer } from "./login-view.reducer";
 import { InfoListViewState, InfoListViewReducer } from "./info-list-view.reducer";
 import { InfoEditViewState, InfoEditViewReducer } from "./info-edit-view.reducer";
 import { InfoDetailEditViewState, InfoDetailEditViewReducer } from "./info-detail-edit-view.reducer";
+import { InfoShowViewState, InfoShowViewReducer } from "./info-show-view.reducer";
 
 export interface AppState {
     users: UserState,
@@ -14,7 +15,8 @@ export interface AppState {
     loginView: LoginState,
     infoListView: InfoListViewState,
     infoEditView: InfoEditViewState,
-    infoDetailEditView: InfoDetailEditViewState
+    infoDetailEditView: InfoDetailEditViewState,
+    infoShowView: InfoShowViewState
 };
 
 export const appReducer:Reducer<AppState> = combineReducers<AppState>({
@@ -23,7 +25,8 @@ export const appReducer:Reducer<AppState> = combineReducers<AppState>({
     loginView: LoginReducer,
     infoListView: InfoListViewReducer,
     infoEditView: InfoEditViewReducer,
-    infoDetailEditView: InfoDetailEditViewReducer
+    infoDetailEditView: InfoDetailEditViewReducer,
+    infoShowView: InfoShowViewReducer
 });
 
 export const rootReducer:Reducer<AppState> = (state:AppState, action:Action) => {
