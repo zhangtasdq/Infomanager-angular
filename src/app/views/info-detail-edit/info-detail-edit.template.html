@@ -1,1 +1,29 @@
-<h1>Info Detail Edit</h1>
+<div class="info-detail-edit">
+    <ion-header>
+        <ion-navbar color="primary">
+            <ion-title>{{titleText}}</ion-title>
+        </ion-navbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list class="last-padding-border">
+            <ion-item>
+                <ion-label stacked>{{"propertyName" | translate}}</ion-label>
+                <ion-input [(ngModel)]="currentInfoDetail.name" type="text" placeholder='{{"placeholder.inputPropertyName" | translate}}'></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{"propertyValue" | translate}}</ion-label>                
+                <ion-input [(ngModel)]="currentInfoDetail.content" type="text" placeholder='{{"placeholder.inputPropertyValue" | translate}}'></ion-input>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+    <ion-footer [style.justify-content]="isEditInfoDetail() ? 'space-between': 'flex-end'">
+        <button (click)="deleteDetailItem()" color="danger" *ngIf="isEditInfoDetail()" ion-button icon-left>
+            <ion-icon name="md-trash"></ion-icon>
+            {{"delete" | translate}}
+        </button>
+        <button (click)="saveDetailItem()" ion-button icon-left><ion-icon name="md-folder"></ion-icon>{{"save" | translate}}</button>
+    </ion-footer>
+</div>

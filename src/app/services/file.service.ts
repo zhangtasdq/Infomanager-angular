@@ -40,7 +40,6 @@ class FileService {
 
     private getAppPath():string {
         if (!this.appPath) {
-            console.log(cordova);
             this.appPath = cordova.file.dataDirectory;
         }
         return this.appPath;

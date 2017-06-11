@@ -1,0 +1,14 @@
+.info-detail-edit {
+    height: 100%;
+    ion-content {
+        margin-top: 20px;
+    }
+    ion-footer {
+        display: flex;
+        padding: 0 0.75em 0.5em;
+
+        &:before {
+            display: none;
+        }
+    }
+}
