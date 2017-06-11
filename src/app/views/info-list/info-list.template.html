@@ -1,1 +1,46 @@
-<h1>Info List</h1>
+<ion-menu [content]="infoListContent">
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>{{"category" | translate}}</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <ion-item [ngClass]="{'active': activeCategory === category}" menuClose *ngFor="let category of categories" (click)="changeInfosByCategory(category)" >
+                {{category}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-header>
+    <ion-navbar color="primary" #infoListContent>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{"infoList" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <button ion-item (click)="showInfo(info.id)" *ngFor="let info of infos" >{{info.title}}</button>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="footer-nav">
+    <ion-grid>
+        <ion-row>
+            <ion-col (click)="tryRestoreInfo()">
+                <ion-icon name="md-cloud-download"></ion-icon>
+            </ion-col>
+            <ion-col (click)="tryBackupInfo()">
+                <ion-icon name="md-cloud-upload"></ion-icon>
+            </ion-col>
+            <ion-col (click)="createNewInfo()">
+                <ion-icon name="md-add"></ion-icon>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

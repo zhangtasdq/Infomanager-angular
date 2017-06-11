@@ -15,15 +15,19 @@ import { APP_CONFIG, AppConfigValue } from "./configs/app.config";
 import { AppStore } from "./app.store";
 import { AppState, rootReducer } from "./reducers/index";
 
+import OneDriveService from "./services/onedrive.service";
 import NoticeService from "./services/notice.service";
 import PasswordService from "./services/password.service";
 import FileService from "./services/file.service";
 import AesService from "./services/aes.service";
 import UserService from "./services/user.service";
+import InfoService from "./services/info.service";
 
 import { MyApp } from './app.component';
 import LoginView from "./views/login/login.view";
 import InfoListView from "./views/info-list/info-list.view";
+import InfoEditView from "./views/info-edit/info-edit.view";
+import InfoShowView from "./views/info-show/info-show.view";
 
 let store:Store<AppState> = createStore<AppState>(rootReducer);
 
@@ -31,7 +35,9 @@ let store:Store<AppState> = createStore<AppState>(rootReducer);
   declarations: [
     MyApp,
     LoginView,
-    InfoListView
+    InfoListView,
+    InfoShowView,
+    InfoEditView
   ],
   imports: [
     BrowserModule,
@@ -50,7 +56,9 @@ let store:Store<AppState> = createStore<AppState>(rootReducer);
   entryComponents: [
     MyApp,
     LoginView,
-    InfoListView
+    InfoListView,
+    InfoShowView,
+    InfoEditView
   ],
   providers: [
     StatusBar,
@@ -60,7 +68,9 @@ let store:Store<AppState> = createStore<AppState>(rootReducer);
     PasswordService,
     AesService,
     FileService,
+    OneDriveService,
     UserService,
+    InfoService,
     {provide: APP_CONFIG, useValue: AppConfigValue},
     {provide: AppStore, useFactory: () => store},
     {provide: ErrorHandler, useClass: IonicErrorHandler}
