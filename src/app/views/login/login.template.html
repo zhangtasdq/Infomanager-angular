@@ -1,0 +1,9 @@
+<div class="login-view">
+    <ion-card>
+        <ion-card-header>{{"login" | translate}}</ion-card-header>
+        <ion-card-content>
+            <ion-input [(ngModel)]="inputPassword" type="password" placeholder="{{'placeholder.inputPassword' | translate}}"></ion-input>
+            <button (click)="onLogin()" ion-button full>{{"login" | translate}}</button>
+        </ion-card-content>
+    </ion-card>
+</div>
