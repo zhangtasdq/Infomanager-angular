@@ -40,7 +40,7 @@ ionic plugin add https://github.com/zhangtasdq/cordova-plugin-aestool.git
 3.Run
 
 ```shell
-react-native run-android
+ionic run android
 ```
 
 
