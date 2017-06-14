@@ -1,0 +1,26 @@
+.info-show {
+    height: 100%;
+
+    .info-detail-list {
+        margin-top: 40px;
+
+        .list-header {
+            border-top-width: 0;
+            margin-bottom: 0;
+
+            .label {
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    ion-footer {
+       display: flex;
+       padding: 0 0.75em 0.5em;
+       justify-content: space-between;
+
+        &:before {
+            display: none;
+        }
+    }
+}

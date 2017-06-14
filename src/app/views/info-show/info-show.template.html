@@ -1,0 +1,32 @@
+<div class="info-show">
+    <ion-header>
+        <ion-navbar color="primary">
+            <ion-title>{{"showInfoTitle" | translate}}</ion-title>
+        </ion-navbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <ion-item>
+                <h2>{{"title" | translate}}</h2>
+                <p>{{currentInfo.title}}</p>
+            </ion-item>
+
+            <ion-item>
+                <h2>{{"category" | translate}}</h2>
+                <p>{{currentInfo.category}}</p>
+            </ion-item>
+        </ion-list>
+
+        <ion-list class="info-detail-list">
+            <ion-list-header>{{"detail" | translate}}</ion-list-header>
+            <ion-item *ngFor="let detailItem of currentInfo.details"> {{detailItem.name}}</ion-item>
+        </ion-list>
+    </ion-content>
+
+    <ion-footer>
+        <button (click)="tryDeleteInfo()" color="danger"ion-button icon-left><ion-icon name="md-trash"></ion-icon>{{"delete" | translate}}</button>
+        <button (click)="editInfo()" ion-button icon-left><ion-icon name="md-create"></ion-icon>{{"edit" | translate}}</button>
+    </ion-footer>
+
+</div>

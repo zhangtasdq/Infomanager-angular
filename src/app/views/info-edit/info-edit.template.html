@@ -1,0 +1,36 @@
+<div class="info-edit">
+    <ion-header>
+        <ion-navbar color="primary">
+            <ion-title>{{titleText}}</ion-title>
+            <ion-buttons end>
+                <button ion-button ion-only (click)="saveInfo()">
+                    <ion-icon name="folder"></ion-icon>
+                </button>
+            </ion-buttons>
+        </ion-navbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list class="last-padding-border">
+            <ion-item>
+                <ion-label floating>{{"title" | translate}}</ion-label>
+                <ion-input [(ngModel)]="currentInfo.title" type="text" ></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>{{"category" | translate}}</ion-label>
+                <ion-input [(ngModel)]="currentInfo.category" type="text"></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <ion-list class="info-detail-list">
+            <ion-list-header>{{"detail" | translate}}</ion-list-header>
+            <ion-item (click)="editInfoDetailItem(detailItem)" *ngFor="let detailItem of currentInfo.details"> {{detailItem.name}}</ion-item>
+        </ion-list>
+    </ion-content>
+
+    <ion-footer>
+        <button (click)="createNewDetailItem()" ion-button icon-left><ion-icon name="md-create"></ion-icon> {{"add" | translate}}</button>
+    </ion-footer>
+
+</div>

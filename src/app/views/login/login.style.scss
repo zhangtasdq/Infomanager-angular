@@ -1,0 +1,22 @@
+.login-view {
+    ion-card {
+        width: 90%;
+        max-width: 450px;
+        height: 280px;
+        margin: 100px auto 0;
+
+        ion-card-header {
+            background-color: map-get($colors , primary);
+            font-size: $titleSize;
+            color: #fff;
+        }
+
+        ion-card-content {
+            padding: 2em 4em !important;
+        }
+
+        button {
+            margin-top: 2em;
+        }
+    }
+}
